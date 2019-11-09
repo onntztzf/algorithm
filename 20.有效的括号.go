@@ -49,7 +49,7 @@ func isValid(s string) bool {
 			return false
 		}
 	}
-	return 0 == len(stack.data)
+	return 0 == stack.Length()
 }
 
 type Stack struct {
