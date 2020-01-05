@@ -41,7 +41,8 @@ func main() {
 
 func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
 	//return enumerate(l1, l2)
-	return enumerate2(l1, l2)
+	//return enumerate2(l1, l2)
+	return recurse(l1, l2)
 }
 
 /*
@@ -131,8 +132,28 @@ func enumerate2(l1 *ListNode, l2 *ListNode) *ListNode {
 递归
 */
 func recurse(l1 *ListNode, l2 *ListNode) *ListNode {
-	//创建和的链表
-	resultList := &ListNode{}
+	if l1 == nil && l2 == nil {
+		return nil
+	}
+	if l1 == nil {
+		return l2
+	}
+	if l2 == nil {
+		return l1
+	}
 
-	return resultList
+	sum := l1.Val + l2.Val
+	nextNode := addTwoNumbers(l1.Next, l2.Next)
+	if sum < 10 {
+		return &ListNode{ Val: sum, Next: nextNode }
+	} else {
+		tempNode := &ListNode{
+			Val: 1,
+			Next: nil,
+		}
+		return &ListNode{
+			Val: sum - 10,
+			Next: addTwoNumbers(nextNode, tempNode),
+		}
+	}
 }
