@@ -1,4 +1,6 @@
 /*
+	9.回文数
+
 	判断一个整数是否是回文数。回文数是指正序（从左向右）和倒序（从右向左）读都是一样的整数。
 
 	示例 1:
@@ -19,10 +21,32 @@
 
 package main
 
+import (
+	"fmt"
+	"math/rand"
+)
+
 func main() {
-	
+	x := rand.Int()
+	fmt.Println(x)
+	fmt.Println(isPalindrome(x))
 }
 
 func isPalindrome(x int) bool {
-
+	//小于 0 || 尾数为 0
+	if x < 0 || (x != 0 && x % 10 == 0) {
+		return false
+	}
+	//一位数都是回文数
+	if x < 10 {
+		return true
+	}
+	//反转结果
+	reverseResult := 0
+	for x > reverseResult {
+		reverseResult = reverseResult * 10 + x % 10
+		x /= 10
+	}
+	//第一个判断为整数长度为偶数时，第二个判断为整数长度为奇数时（奇数时 中间那一位肯定会与自己相等）
+	return x == reverseResult || x == reverseResult / 10
 }
