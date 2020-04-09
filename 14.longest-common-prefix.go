@@ -18,9 +18,26 @@
 package main
 
 func main() {
-	
+	longestCommonPrefix([]string{"flower","flow","flight"})
 }
 
 func longestCommonPrefix(strs []string) string {
-
+	if len(strs) == 0 {
+		return ""
+	}
+	var commonPrefix = strs[0]
+	for _, val := range strs {
+		if len(commonPrefix) > len(val) {
+			commonPrefix = val
+		}
+	}
+	for _, val := range strs {
+		for val[0:len(commonPrefix)] != commonPrefix {
+			commonPrefix = commonPrefix[0:len(commonPrefix)-1]
+			if len(commonPrefix) == 0 {
+				return ""
+			}
+		}
+	}
+	return commonPrefix
 }
