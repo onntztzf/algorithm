@@ -68,7 +68,7 @@ func enumerate(l1 *ListNode, l2 *ListNode) *ListNode {
 			l1 = l1.Next
 		}
 
-		//l2 当前节点不为空时，对 x 赋值, 同时修改 l2 指向的节点
+		//l2 当前节点不为空时，对 y 赋值, 同时修改 l2 指向的节点
 		if l2 != nil {
 			y = l2.Val
 			l2 = l2.Next
@@ -109,7 +109,7 @@ func enumerate2(l1 *ListNode, l2 *ListNode) *ListNode {
 			x = l1.Val
 			l1 = l1.Next
 		}
-		//l2 当前节点不为空时，对 x 赋值, 同时修改 l2 指向的节点
+		//l2 当前节点不为空时，对 y 赋值, 同时修改 l2 指向的节点
 		if l2 != nil {
 			y = l2.Val
 			l2 = l2.Next
