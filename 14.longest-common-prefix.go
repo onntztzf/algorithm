@@ -40,7 +40,7 @@ func longestCommonPrefix(strs []string) string {
 		//如果 currentPrefix 和 commonPrefix 不一样，则进入下面循环
 		for currentPrefix != commonPrefix {
 			//删除 commonPrefix 最后一位
-			commonPrefix = commonPrefix[0:len(commonPrefix)-1]
+			commonPrefix = commonPrefix[0 : len(commonPrefix)-1]
 			//当 commonPrefix 修改为空字符串时，表示没有公共前缀，返回 ""
 			if len(commonPrefix) == 0 {
 				return ""
@@ -70,7 +70,7 @@ func longestCommonPrefix1(strs []string) string {
 			//当前字符串的当前字符
 			currentCharacter := strs[j][i]
 			//如果 currentCommonPrefixCharacter 与 currentCharacter 不同
-			if currentCommonPrefixCharacter != currentCharacter  {
+			if currentCommonPrefixCharacter != currentCharacter {
 				return commonPrefix[0:i]
 			}
 		}

@@ -32,7 +32,7 @@ func main() {
 
 func isPalindrome(x int) bool {
 	//小于 0 || 尾数为 0
-	if x < 0 || (x != 0 && x % 10 == 0) {
+	if x < 0 || (x != 0 && x%10 == 0) {
 		return false
 	}
 	//一位数都是回文数
@@ -42,17 +42,17 @@ func isPalindrome(x int) bool {
 	//反转结果
 	reverseResult := 0
 	for x > reverseResult {
-		reverseResult = reverseResult * 10 + x % 10
+		reverseResult = reverseResult*10 + x%10
 		x /= 10
 	}
 	//第一个判断为整数长度为偶数时，第二个判断为整数长度为奇数时（奇数时 中间那一位肯定会与自己相等）
-	return x == reverseResult || x == reverseResult / 10
+	return x == reverseResult || x == reverseResult/10
 }
 
 func isPalindrome2(x int) bool {
 	string := strconv.Itoa(x)
 	for i := 0; i < len(string)/2; i++ {
-		if string[i] != string[len(string) - 1 - i]{
+		if string[i] != string[len(string)-1-i] {
 			return false
 		}
 	}

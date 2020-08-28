@@ -47,7 +47,7 @@ func countAndSay(n int) string {
 		return "1"
 	}
 	//上一次的计算结果
-	var lastResult = countAndSay(n-1)
+	var lastResult = countAndSay(n - 1)
 	//本次的结果
 	var currentResult = ""
 	//相同字符的计数器

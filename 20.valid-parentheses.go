@@ -34,7 +34,7 @@ func main() {
 }
 
 func isValid(s string) bool {
-	symbolMap := map[string]string {
+	symbolMap := map[string]string{
 		"(": ")",
 		"[": "]",
 		"{": "}",
@@ -69,11 +69,11 @@ func (s *Stack) Pop() string {
 		return ""
 	} else {
 		lastCharacter := s.data[s.Length()-1]
-		s.data = s.data[0:s.Length()-1]
+		s.data = s.data[0 : s.Length()-1]
 		return lastCharacter
 	}
 }
 
-func (s *Stack) Length () int {
+func (s *Stack) Length() int {
 	return len(s.data)
 }
