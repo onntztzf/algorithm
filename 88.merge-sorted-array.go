@@ -8,7 +8,7 @@
 
 package main
 
-//合并两个有序数组
+//88. 合并两个有序数组
 //https://leetcode-cn.com/problems/merge-sorted-array/
 func merge(nums1 []int, m int, nums2 []int, n int)  {
 	for p1, p2, tail := m-1, n-1, m+n-1; p1 >= 0 || p2 >= 0; tail-- {

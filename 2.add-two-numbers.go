@@ -39,6 +39,8 @@ func main() {
 	}
 }
 
+//2. 两数相加
+//link: https://leetcode-cn.com/problems/add-two-numbers/
 func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
 	//return enumerate(l1, l2)
 	//return enumerate2(l1, l2)

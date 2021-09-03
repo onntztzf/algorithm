@@ -26,6 +26,8 @@ func main() {
 	fmt.Println(compareVersion("1.5.2.6", "1.5.2.6"))
 }
 
+//165. 比较版本号
+//link: https://leetcode-cn.com/problems/compare-version-numbers/
 func compareVersion(version1 string, version2 string) int {
 	//以 . 对版本号进行分割
 	arr1 := strings.Split(version1, ".")

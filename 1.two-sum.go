@@ -21,6 +21,8 @@ func main() {
 	fmt.Println(result)
 }
 
+//1. 两数之和
+//link: https://leetcode-cn.com/problems/two-sum/
 func twoSum(nums []int, target int) []int {
 	tempMap := make(map[int]int)
 	for index, value := range nums {

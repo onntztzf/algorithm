@@ -30,6 +30,8 @@ func main() {
 	fmt.Println(isPalindrome2(1234321))
 }
 
+//9. 回文数
+//link: https://leetcode-cn.com/problems/palindrome-number/
 func isPalindrome(x int) bool {
 	//小于 0 || 尾数为 0
 	if x < 0 || (x != 0 && x%10 == 0) {
