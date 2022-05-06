@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 /**
 509. 斐波那契数
 
@@ -36,10 +38,21 @@ F(n) = F(n - 1) + F(n - 2)，其中 n > 1
 */
 
 func main() {
-	fib(3)
+	fmt.Printf("dp table fib result: %d\n", fib2(5))
+	fmt.Printf("map cache fib result: %d\n", fib1(5))
 }
 
-func fib(n int) int {
+//通过dp table提高效率
+func fib2(n int) int {
+	dp := []int{0, 1}
+	for i := 2; i <= n; i++ {
+		dp = append(dp, dp[i-1]+dp[i-2])
+	}
+	return dp[n]
+}
+
+//通过缓存结果提高效率
+func fib1(n int) int {
 	temp := map[int]int{
 		0: 0,
 		1: 1,
@@ -49,7 +62,7 @@ func fib(n int) int {
 		if v, ok := temp[n]; ok {
 			return v
 		}
-		temp[n] = fib(n-1) + fib(n-2)
+		temp[n] = fib1(n-1) + fib1(n-2)
 		return temp[n]
 	}
 	return f(n)
